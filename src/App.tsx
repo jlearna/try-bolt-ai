@@ -10,6 +10,13 @@ function App() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const scrollToForm = () => {
+    const formSection = document.getElementById('lead-capture-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
@@ -81,6 +88,12 @@ function App() {
                 </div>
               </div>
             </div>
+            <button
+              onClick={scrollToForm}
+              className="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-800 font-bold py-4 px-8 rounded-lg text-xl hover:from-yellow-300 hover:to-orange-400 transform hover:scale-105 transition-all duration-300 shadow-2xl"
+            >
+              Start Your Journey Now →
+            </button>
             <ChevronDown className="w-8 h-8 mx-auto animate-bounce text-yellow-400" />
           </div>
         </div>
@@ -130,6 +143,15 @@ function App() {
                 </div>
               </div>
             </div>
+            
+            <div className="text-center">
+              <button
+                onClick={scrollToForm}
+                className="bg-gradient-to-r from-blue-600 to-purple-700 text-white font-bold py-4 px-8 rounded-lg text-xl hover:from-blue-500 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-xl"
+              >
+                I'm Ready to Break Free →
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -175,6 +197,15 @@ function App() {
                   </div>
                 </div>
               </div>
+            </div>
+            
+            <div className="text-center mt-12">
+              <button
+                onClick={scrollToForm}
+                className="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-800 font-bold py-4 px-8 rounded-lg text-xl hover:from-yellow-300 hover:to-orange-400 transform hover:scale-105 transition-all duration-300 shadow-2xl"
+              >
+                Show Me How →
+              </button>
             </div>
           </div>
         </div>
@@ -248,12 +279,21 @@ function App() {
                 </div>
               </div>
             </div>
+            
+            <div className="text-center mt-12">
+              <button
+                onClick={scrollToForm}
+                className="bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold py-4 px-8 rounded-lg text-xl hover:from-green-400 hover:to-blue-500 transform hover:scale-105 transition-all duration-300 shadow-xl"
+              >
+                Get My Strategy Session →
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Lead Capture Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800 text-white">
+      <section id="lead-capture-form" className="py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
